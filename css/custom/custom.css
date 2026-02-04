@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Mogra';
+  src: url('/fonts/Mogra-Regular-all.ttf');
+  font-display: swap;
+}
+
+/* 仅在页面向下滚动后（nav-fixed）显示背景 */
+#page-header.nav-fixed #nav {
+  /* background: rgba(255, 255, 255, 0.8) !important; */
+}
+
+/* 导航栏字体放大 */
+#nav {
+  font-size: 1.4rem !important; /* 原始是 1.3em，这里放大到 1.6rem (约 25px)，如果直接 2 倍会太大挤爆 */
+  height: 80px !important;    /* 配合字体放大增加导航栏高度 */
+}
+
+/* 导航栏标题字体样式 */
+#nav .site-name {
+  font-family: 'Mogra', cursive !important;
+  font-size: 1.8rem !important; /* 标题可以比菜单稍微大一点 */
+  letter-spacing: 1px;
+}
+
+/* 首页横幅中间标题字体样式 */
+#site-info #site-title {
+  font-family: 'Mogra', cursive !important;
+  font-size: 5rem !important; /* 原始约为 1.5-2rem，这里大幅放大，3倍效果建议 5rem 左右 */
+  margin-bottom: 20px;
+}
+
+/* 导航栏内的 Logo 大小同步放大 */
+#nav #blog-info .site-icon {
+  height: 48px !important;
+}
+
+/* 导航栏菜单间距调整 */
+#nav .menus_items .menus_item {
+  padding: 0 0 0 20px !important;
+}
+
+/* 仅针对文章页正文内容放大字体，不影响全站其他部分 */
+#article-container p,
+#article-container li {
+  font-size: 1.4rem !important; /* 正文字体 */
+  line-height: 2 !important;
+}
+
+/* 同时也放大文章内的标题，保持视觉比例 */
+#article-container h1 { font-size: 2.6rem !important; }
+#article-container h2 { font-size: 2.2rem !important; }
+#article-container h3 { font-size: 2.0rem !important; }
+#article-container h4 { font-size: 1.8rem !important; }
+#article-container h5 { font-size: 1.5rem !important; }
+#article-container h6 { font-size: 1.4rem !important; }
+
+/* 适配移动端 */
+@media screen and (max-width: 768px) {
+  #article-container p,
+  #article-container li {
+    font-size: 1.2rem !important;
+  }
+  #article-container h1 { font-size: 2.1rem !important; }
+  #article-container h2 { font-size: 1.9rem !important; }
+  #article-container h3 { font-size: 1.6rem !important; }
+  #article-container h4 { font-size: 1.5rem !important; }
+}
