@@ -11,8 +11,8 @@
 
 /* 导航栏字体放大 */
 #nav {
-  font-size: 1.4rem !important; /* 原始是 1.3em，这里放大到 1.6rem (约 25px)，如果直接 2 倍会太大挤爆 */
-  height: 80px !important;    /* 配合字体放大增加导航栏高度 */
+  font-size: 1.3rem !important; /* 原始是 1.3em，这里放大到 1.6rem (约 25px)，如果直接 2 倍会太大挤爆 */
+  height: 60px !important;    /* 配合字体放大增加导航栏高度 */
 }
 
 /* 导航栏标题字体样式 */
@@ -54,14 +54,56 @@
 #article-container h5 { font-size: 1.5rem !important; }
 #article-container h6 { font-size: 1.4rem !important; }
 
+/* 去除文章页面的阴影和立体感，仅针对文章页 */
+#post {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
 /* 适配移动端 */
 @media screen and (max-width: 768px) {
+  #post {
+    padding: 10px 5px !important;
+  }
   #article-container p,
   #article-container li {
-    font-size: 1.2rem !important;
+    font-size: 1.0rem !important; 
   }
-  #article-container h1 { font-size: 2.1rem !important; }
-  #article-container h2 { font-size: 1.9rem !important; }
-  #article-container h3 { font-size: 1.6rem !important; }
-  #article-container h4 { font-size: 1.5rem !important; }
+  #article-container h1 { font-size: 1.8rem !important; } 
+  #article-container h2 { font-size: 1.6rem !important; } 
+  #article-container h3 { font-size: 1.4rem !important; } 
+  #article-container h4 { font-size: 1.3rem !important; } 
+
+  /* 首页横幅中间标题在移动端缩小 */
+  #site-info #site-title {
+    font-size: 2.5rem !important; /* PC端是 5rem，手机端降为 2.5rem */
+  }
+}
+
+/* 文章过期提醒样式 */
+#custom-post-outdate-notice {
+  display: none; /* 默认隐藏，由 JS 控制显示 */
+  position: relative;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #f44336;
+  background-color: #f8f8f8;
+  color: #4c4948;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+#custom-post-outdate-notice[style*="display: block"],
+#custom-post-outdate-notice:not([hidden]) {
+  display: block !important;
+}
+
+@media screen and (max-width: 768px) {
+  #custom-post-outdate-notice {
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+  }
 }
