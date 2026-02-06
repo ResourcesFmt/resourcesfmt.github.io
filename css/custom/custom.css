@@ -12,7 +12,7 @@
 /* 导航栏字体放大 */
 #nav {
   font-size: 1.3rem !important; /* 原始是 1.3em，这里放大到 1.6rem (约 25px)，如果直接 2 倍会太大挤爆 */
-  height: 60px !important;    /* 配合字体放大增加导航栏高度 */
+  height: 50px !important;    /* 配合字体放大增加导航栏高度 */
 }
 
 /* 导航栏标题字体样式 */
@@ -54,8 +54,8 @@
 #article-container h5 { font-size: 1.5rem !important; }
 #article-container h6 { font-size: 1.4rem !important; }
 
-/* 去除文章页面的阴影和立体感，仅针对文章页 */
-#post {
+/* 去除文章页面和“关于”等页面的阴影和立体感 */
+#post, #page {
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
@@ -79,6 +79,12 @@
   /* 首页横幅中间标题在移动端缩小 */
   #site-info #site-title {
     font-size: 2.5rem !important; /* PC端是 5rem，手机端降为 2.5rem */
+  }
+
+  /* 导航栏字体在移动端缩小 */
+  #nav {
+    font-size: 1.1rem !important; /* PC端是 1.3rem，手机端降为 1.1rem */
+    height: 50px !important;    /* 手机端导航栏高度同步调小 */
   }
 }
 
@@ -106,4 +112,25 @@
     font-size: 1rem;
     padding: 0.8rem 1rem;
   }
+}
+
+/* 自定义橙色方块列表样式 */
+.custom-list ul {
+  list-style: none !important; /* 强制去掉默认小点 */
+  padding-left: 5px !important; /* 调整缩进 */
+  margin: 10px 0 !important;
+}
+.custom-list li {
+  margin-bottom: 8px !important; /* 列表项间距 */
+  line-height: 1.6;
+}
+.custom-list li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ff6600; /* 橙色方块 */
+  margin-right: 10px;
+  vertical-align: middle;
+  flex-shrink: 0;
 }
