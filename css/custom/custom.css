@@ -81,6 +81,11 @@
     font-size: 2.5rem !important; /* PC端是 5rem，手机端降为 2.5rem */
   }
 
+  /* 移动端隐藏侧边栏小部件 */
+  #aside-content {
+    display: none !important;
+  }
+
   /* 导航栏字体在移动端缩小 */
   #nav {
     font-size: 1.1rem !important; /* PC端是 1.3rem，手机端降为 1.1rem */
@@ -133,4 +138,43 @@
   margin-right: 10px;
   vertical-align: middle;
   flex-shrink: 0;
+}
+
+/* 关于页面元数据样式 - 模仿文章页 post-meta */
+.about-meta {
+  padding: 0;
+  color: #eee !important;
+  text-align: center;
+  width: 100%;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  margin-top: 20px !important;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-meta .post-meta-separator {
+  margin: 0 8px;
+  color: #eee;
+  opacity: 0.7;
+}
+
+.about-meta .post-meta-icon {
+  margin-right: 4px;
+}
+
+.about-meta .post-meta-label {
+  display: inline;
+}
+
+@media screen and (max-width: 768px) {
+  .about-meta .post-meta-label {
+    display: none; /* 移动端精简模式 */
+  }
+  .about-meta {
+    font-size: 0.85em;
+    gap: 4px;
+  }
 }
