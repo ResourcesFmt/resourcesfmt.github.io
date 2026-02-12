@@ -20,6 +20,8 @@
     if (diffUpdated >= limitDay) {
       ele.innerHTML = `请注意，本文编写于 ${diffCreated} 天前，最后修改于 ${diffUpdated} 天前，其中某些信息可能已经过时。`
       ele.style.display = 'block'
+    } else {
+      ele.style.display = 'none'
     }
   }
 

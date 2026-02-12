@@ -1,0 +1,102 @@
+/* Waline 评论系统自定义样式 */
+/* 参考官方文档: https://waline.js.org/guide/features/style.html */
+
+:root {
+  /* 基础颜色变量 */
+  --waline-theme-color: #49b1f5;
+  --waline-active-color: #3b82f6;
+  --waline-badge-color: #49b1f5;
+  --waline-border-radius: 12px;
+  
+  /* 阴影与背景 */
+  --waline-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --waline-info-bgcolor: #fbfbfb;
+  --waline-white: #fff;
+  --waline-light-grey: #999;
+  --waline-dark-grey: #666;
+
+  /* 字体大小变量 (官方默认通常是 16px) */
+  --waline-font-size: 16px;
+}
+
+/* 暗黑模式适配 */
+[data-theme="dark"] {
+  --waline-white: #2c2c2c;
+  --waline-light-grey: #666;
+  --waline-dark-grey: #999;
+  --waline-info-bgcolor: #333;
+  --waline-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --waline-border-color: #444;
+  --waline-disable-bgcolor: #222;
+  --waline-disable-color: #555;
+  --waline-bgcolor: #121212;
+  --waline-bgcolor-light: #1e1e1e;
+  --waline-bgcolor-hover: #252525;
+}
+
+#waline {
+  margin-top: 40px;
+  padding: 20px;
+  background: var(--waline-white);
+  border-radius: 15px;
+  box-shadow: var(--waline-box-shadow);
+  transition: all 0.3s ease;
+}
+
+/* 评论框输入区域 */
+.wl-editor {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  background: var(--waline-info-bgcolor) !important;
+  border: 1px solid transparent !important;
+}
+
+.wl-editor:focus {
+  background: var(--waline-white) !important;
+  box-shadow: 0 0 0 3px rgba(73, 177, 245, 0.15) !important;
+  border-color: var(--waline-theme-color) !important;
+}
+
+/* 按钮样式优化 */
+.wl-btn {
+  border-radius: 30px !important;
+  padding: 0.6em 1.8em !important;
+  font-weight: 500 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.wl-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(73, 177, 245, 0.3) !important;
+}
+
+/* 头像圆角优化 */
+.wl-user-avatar {
+  border-radius: 50% !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
+}
+
+/* 隐藏部分不必要的元素 */
+.wl-power {
+  display: none !important;
+}
+
+/* 根据官方元素定义隐藏指定工具栏按钮 */
+/* 增加选择器权重，确保强制隐藏 */
+.wl-actions .wl-action:nth-child(1), /* 最左边的 Markdown */
+.wl-actions .wl-action:nth-child(3), /* GIF */
+.wl-actions .wl-action:nth-child(5)  /* 图片上传 */{
+  display: none !important;
+} 
+
+/* 仅增大评论正文内容字体 - 增大一倍 (从 16px 变为 32px) */
+.wl-content {
+  font-size: 18px !important;
+  line-height: 1.0 !important;
+}
+
+/* 增大顶部信息栏（昵称、邮箱、网址）字体 */
+.wl-header label,
+.wl-header input {
+  font-size: 15px !important;
+}

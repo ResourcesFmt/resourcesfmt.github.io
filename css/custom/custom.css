@@ -107,6 +107,13 @@
   border-radius: 4px;
 }
 
+/* 适配暗黑模式 */
+[data-theme="dark"] #custom-post-outdate-notice {
+  background-color: #2c1515;
+  color: #feb2b2;
+  border-left-color: #fc8181;
+}
+
 #custom-post-outdate-notice[style*="display: block"],
 #custom-post-outdate-notice:not([hidden]) {
   display: block !important;
