@@ -114,8 +114,7 @@
   border-left-color: #fc8181;
 }
 
-#custom-post-outdate-notice[style*="display: block"],
-#custom-post-outdate-notice:not([hidden]) {
+#custom-post-outdate-notice[style*="display: block"] {
   display: block !important;
 }
 
@@ -160,6 +159,44 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+/* 文章页标题及元数据居中排列且横向一行 */
+#post-info {
+  text-align: center !important;
+}
+
+#post-info #post-meta {
+  color: #eee !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#post-info #post-meta .meta-firstline,
+#post-info #post-meta .meta-secondline {
+  display: inline !important;
+}
+
+#post-info #post-meta .post-meta-separator {
+  margin: 0 6px !important;
+}
+
+#post-info #post-meta .post-meta-icon {
+  margin-right: 4px !important;
+}
+
+/* 在分类和阅读量（或其他第二行数据）之间添加缺失的分割线 */
+#post-info #post-meta .meta-firstline + .meta-secondline::before {
+  content: "|";
+  margin: 0 6px;
+  color: inherit;
+  opacity: 0.7;
+}
+
+/* 统一所有分割线的粗细和颜色 */
+#post-info #post-meta .post-meta-separator {
+  margin: 0 6px !important;
+  opacity: 0.7 !important;
+  font-weight: normal !important;
 }
 
 .about-meta .post-meta-separator {

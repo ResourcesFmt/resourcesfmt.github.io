@@ -100,3 +100,14 @@
 .wl-header input {
   font-size: 15px !important;
 }
+
+/* 设置输入框占位符颜色为灰色 */
+.wl-header input::placeholder {
+  color: #999 !important;
+  opacity: 0.8;
+}
+
+/* 暗黑模式占位符颜色 */
+[data-theme="dark"] .wl-header input::placeholder {
+  color: #666 !important;
+}
