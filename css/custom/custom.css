@@ -205,4 +205,10 @@
   margin: 0 8px !important;
 }
 
-
+/* 增加头部元数据颜色对比度 */
+#post-info #post-meta,
+#post-info #post-meta a,
+#page-header #page-site-info #post-meta,
+#page-header #page-site-info #post-meta a {
+  color: var(--white) !important;
+}
