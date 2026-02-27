@@ -42,17 +42,17 @@
 /* 仅针对文章页正文内容放大字体，不影响全站其他部分 */
 #article-container p,
 #article-container li {
-  font-size: 1.4rem !important; /* 正文字体 */
+  font-size: calc(1.4rem * var(--article-font-scale, 1)) !important; /* 正文字体 */
   line-height: 2 !important;
 }
 
 /* 同时也放大文章内的标题，保持视觉比例 */
-#article-container h1 { font-size: 2.6rem !important; }
-#article-container h2 { font-size: 2.2rem !important; }
-#article-container h3 { font-size: 2.0rem !important; }
-#article-container h4 { font-size: 1.8rem !important; }
-#article-container h5 { font-size: 1.5rem !important; }
-#article-container h6 { font-size: 1.4rem !important; }
+#article-container h1 { font-size: calc(2.6rem * var(--article-font-scale, 1)) !important; }
+#article-container h2 { font-size: calc(2.2rem * var(--article-font-scale, 1)) !important; }
+#article-container h3 { font-size: calc(2.0rem * var(--article-font-scale, 1)) !important; }
+#article-container h4 { font-size: calc(1.8rem * var(--article-font-scale, 1)) !important; }
+#article-container h5 { font-size: calc(1.5rem * var(--article-font-scale, 1)) !important; }
+#article-container h6 { font-size: calc(1.4rem * var(--article-font-scale, 1)) !important; }
 
 /* 去除文章页面和“关于”等页面的阴影和立体感 */
 #post, #page {
@@ -68,13 +68,14 @@
     padding: 10px 5px !important;
   }
   #article-container p,
-  #article-container li {
-    font-size: 1.0rem !important; 
+  #article-container li,
+  #custom-post-outdate-notice {
+    font-size: calc(1.0rem * var(--article-font-scale, 1)) !important; 
   }
-  #article-container h1 { font-size: 1.8rem !important; } 
-  #article-container h2 { font-size: 1.6rem !important; } 
-  #article-container h3 { font-size: 1.4rem !important; } 
-  #article-container h4 { font-size: 1.3rem !important; } 
+  #article-container h1 { font-size: calc(1.8rem * var(--article-font-scale, 1)) !important; } 
+  #article-container h2 { font-size: calc(1.6rem * var(--article-font-scale, 1)) !important; } 
+  #article-container h3 { font-size: calc(1.4rem * var(--article-font-scale, 1)) !important; } 
+  #article-container h4 { font-size: calc(1.3rem * var(--article-font-scale, 1)) !important; } 
 
   /* 首页横幅中间标题在移动端缩小 */
   #site-info #site-title {
@@ -211,4 +212,54 @@
 #page-header #page-site-info #post-meta,
 #page-header #page-site-info #post-meta a {
   color: var(--white) !important;
+}
+
+/* 自定义列表样式 {% cl %} ... {% endcl %} */
+.custom-list ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 20px;
+  margin: 8px 0;
+  line-height: 2; /* 稍微增加行高，保持舒适 */
+}
+
+/* 方块图标 */
+.custom-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em; /* 垂直居中调整，基于字体大小动态计算 */
+  width: 0.4em; /* 方块大小随字体缩放 */
+  height: 0.4em;
+  background-color: #d96847; /* 橙红色方块 */
+  border-radius: 0; /* 方块 */
+}
+
+/* 鼠标悬停时方块稍微变色 */
+.custom-list li:hover::before {
+  background-color: #e74c3c;
+}
+
+/* 自定义文章过期提醒样式 */
+#custom-post-outdate-notice {
+  position: relative;
+  margin: 0 0 20px;
+  padding: .5em 1.2em;
+  background-color: #f9f9f9;
+  color: #4c4948;
+  border-radius: 3px;
+  border-left: 5px solid #FF5722;
+  font-size: 1.4rem !important; /* 跟随正文字体大小 */
+  line-height: 2 !important;
+}
+
+/* 暗夜模式适配 */
+[data-theme="dark"] #custom-post-outdate-notice {
+  background-color: #232323;
+  color: #cccccc;
 }
